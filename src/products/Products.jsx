@@ -13,6 +13,9 @@ const Products = () => {
         const favoriteItem = JSON.parse(localStorage.getItem('favo')) ;
         if(favoriteItem){
             setFavorite(favoriteItem)
+
+        const totalPrice = favoriteItem.reduce((pre,current)=> pre + current.price,0);
+        setTotal(totalPrice)
         }
         else{
            setFound("No data found")
@@ -25,6 +28,7 @@ const Products = () => {
         localStorage.clear()
         setFavorite([])
         setFound("No data found")
+        setTotal(0)
     }
 
 
@@ -33,6 +37,7 @@ const Products = () => {
         <div>
 
             <h1>this is product: {favorite.length}</h1>
+            <p>Total Price: {total}</p>
             {
                 notFound? <p className="w-11/12 mx-auto">{notFound}</p>: <div>
                     {favorite.length >0 && <button onClick={handleDelete} className="btn">Delete</button>}
@@ -46,8 +51,13 @@ const Products = () => {
 
                
             }
+            
 
-<button onClick={()=>setShow(!show)} className="btn btn-primary m-5">See more</button>
+<button onClick={()=>setShow(!show)} className="btn btn-primary m-5">
+{
+    show?"See less": "See more"
+}
+</button>
 
            
             

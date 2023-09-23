@@ -44,7 +44,11 @@ const PhoneCard = ({phone}) => {
     <h2 className="card-title">{phone_name}</h2>
     <h2>Brand:{brand_name}</h2>
     <p>Price:{price}Tk</p>
-    <p>Rating:{rating}</p>
+    <p>
+    <Rating
+  initialRating={rating}
+  readonly
+/></p>
     <div className="card-actions ">
      
         <button onClick={handleFavourites} className="btn btn-primary w-full">Favourite</button>
