@@ -2,8 +2,8 @@
 
 const Banner = () => {
     return (
-        <div className="h-[1200px]">
-            <div className="carousel w-full h-[40%] bg-gradient-to-r from-violet-500 to-fuchsia-500">
+        <div className="h-full">
+            <div className="carousel w-full h-[70vh] bg-gradient-to-r from-violet-500 to-fuchsia-500">
   <div id="slide1" className="carousel-item relative w-full">
     <img src="https://static-01.daraz.com.bd/p/b802b8ebb0a784ec791caa75e2d4de66.jpg" className="w-full p-4 rounded-lg" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

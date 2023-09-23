@@ -9,20 +9,28 @@ import {
 import MainLayout from './component/Mainlayout/MainLayout.jsx';
 import Home from './component/Home/Home.jsx';
 import Products from './products/Products.jsx';
+import Login from './component/Login/Login.jsx';
+import Error from './component/Error/Error.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=> fetch('data.json')
 
       },{
         path: "/Product",
         element: <Products></Products>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     
     ]
