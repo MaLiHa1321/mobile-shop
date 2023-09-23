@@ -11,6 +11,7 @@ import Home from './component/Home/Home.jsx';
 import Products from './products/Products.jsx';
 import Login from './component/Login/Login.jsx';
 import Error from './component/Error/Error.jsx';
+import Phone from './component/phone/Phone.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: "/phones/:id",
+        element: <Phone></Phone>,
+        loader: () => fetch('/data.json')
       }
     
     ]
